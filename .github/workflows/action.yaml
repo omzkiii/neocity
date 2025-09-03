@@ -9,5 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run tests
-        run: .scripts/action.sh
+      - name: Deploy City
+        run: .scripts/action.sh "$PASSWORD"
+        env:
+          PASSWORD: ${{ secrets.NEOCITY_PASS }}
