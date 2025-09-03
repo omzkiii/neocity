@@ -12,4 +12,4 @@ jobs:
       - name: Deploy City
         run: .scripts/action.sh "$PASSWORD"
         env:
-          PASSWORD: ${{ secrets.NEOCITY_PASS }}
+          PASSWORD: ${{ secrets.TEST }}
