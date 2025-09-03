@@ -7,9 +7,23 @@
   --gv_base05: #d5c4a1;
   --gv_base06: #ebdbb2;
   --gv_base07: #fbf1c7;
+  --gv_red: #fb4934;
+  --gv_orange: #fe8019;
+  --gv_yellow: #fabd2f;
+  --gv_green: #b8bb26;
+  --gv_aqua: #8ec07c;
+  --gv_blue: #83a598;
+  --gv_purple: #d3869b;
+  --gv_brown: #d65d0e;
+  --gv_olive: #98971a;
+  --gv_mustard: #d79921;
+  --gv_cyan: #458588;
+  --gv_magenta: #b16286;
+  --gv_green2: #689d6a;
 
   background-color: var(--gv_base00);
   color: var(--gv_base07);
+  font-family: "Arimo", sans-serif;
 }
 
 body {
@@ -18,4 +32,9 @@ body {
 }
 #title {
   text-align: center;
+  font-weight: 400;
+  font-style: italic;
+  background-color: var(--gv_base06);
+  color: var(--gv_base00);
+  padding: 7vb;
 }
