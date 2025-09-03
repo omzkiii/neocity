@@ -1,3 +1,21 @@
-h1 {
-  color: yellow;
+:root {
+  --gv_base00: #282828;
+  --gv_base01: #3c3836;
+  --gv_base02: #504945;
+  --gv_base03: #665c54;
+  --gv_base04: #bdae93;
+  --gv_base05: #d5c4a1;
+  --gv_base06: #ebdbb2;
+  --gv_base07: #fbf1c7;
+
+  background-color: var(--gv_base00);
+  color: var(--gv_base07);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+#title {
+  text-align: center;
 }
