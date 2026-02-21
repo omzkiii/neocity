@@ -1,4 +1,3 @@
-
 function randomOffset(nNeg, nPos) {
   return Math.floor(Math.random() * (2 * nPos + 1)) - nNeg;
 }

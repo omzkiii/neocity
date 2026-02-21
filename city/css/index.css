@@ -33,11 +33,16 @@ body {
   /* height: 100vh; */
   /* width: 100vw; */
 }
-#title {
+#home {
   text-align: center;
   font-weight: 400;
   font-style: italic;
   background-color: var(--gv_base06);
   color: var(--gv_base00);
   padding: 7vb;
+  margin: 10vb
+}
+
+a {
+  color: var(--gv_base06);
 }
