@@ -1,4 +1,6 @@
-class MyCard extends HTMLElement {
+import { COLORS } from "../constants/colors.js";
+import { BACKGROUND_PHRASE } from "../constants/texts.js";
+class Background extends HTMLElement {
   constructor() {
     super();
     // Attach a Shadow DOM to encapsulate styles and markup
@@ -7,21 +9,56 @@ class MyCard extends HTMLElement {
     this.shadowRoot.innerHTML = `
       <style>
         .card {
-          background: #ffffff;
-          border: 1px solid #e1e4e8;
-          border-radius: 0px;
-          padding: 16px;
+          background: ${COLORS.background};
+          color: ${COLORS.background_text};
           font-family: sans-serif;
-          box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+          width: 100vw;
+          height: 100vh;
+          box-sizing: border-box;
+          position: relative;
+          overflow: hidden;
         }
-        p { color: #2b2a2d; font-size: 14px; }
+        .text {
+          padding: 0px;
+          margin: 0px;
+          font-size: 13px;
+          line-height: 2.1;
+          letter-spacing: 0.04em;
+          word-spacing: 0.2em;
+          user-select: none;
+          overflow: hidden;
+          position: absolute;
+          z-index: 0;
+        }
+        .content{
+          z-index: 1;
+          position: relative;
+        }
+      ::slotted(*) {
+        position: relative;
+        z-index: 1;
+      }
       </style>
       <div class="card">
-        <p><slot name="content"></slot></p>
+        <div class="text"></div>
+        <slot class="content" name="content">hello</slot>
       </div>
     `;
+    const p = this.shadowRoot.querySelector(".text");
+    p.textContent = fillViewport(p);
   }
+}
+function fillViewport(container) {
+  const phrase = BACKGROUND_PHRASE;
+  //
+  let text = phrase
+  //
+  while (container.scrollHeight <= window.innerHeight * 1.15) {
+    text += phrase;
+    container.textContent = text;
+  }
+  return text;
 }
 
 // Register the new element with the browser
-customElements.define("my-card", MyCard);
+customElements.define("c-background", Background);

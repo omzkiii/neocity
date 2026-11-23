@@ -11,11 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>OMZKI</title>
     <link href="css/index.css" rel="stylesheet" />
-    <!-- <script src="scripts/bg_animation.js" defer></script> -->
     <script src="components/component.js" defer></script>
+    <script type="module" src="components/background.js"></script>
   </head>
   <body>
-    <my-card><div slot="content">hello</div> </my-card>
-    <my-card><div slot="content">hello</div> </my-card>
+    <c-background>
+      <div slot="content">
+        <my-card></my-card>
+      </div>
+    </c-background>
   </body>
 </html>

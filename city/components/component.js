@@ -17,7 +17,7 @@ class MyCard extends HTMLElement {
         p { color: #2b2a2d; font-size: 14px; }
       </style>
       <div class="card">
-        <p><slot name="content"></slot></p>
+        <p><slot name="content">hello world</slot></p>
       </div>
     `;
   }
