@@ -9,14 +9,17 @@ class Background extends HTMLElement {
     this.shadowRoot.innerHTML = `
       <style>
         .card {
-          background: ${COLORS.background};
-          color: ${COLORS.background_text};
           font-family: sans-serif;
           width: 100vw;
           height: 100vh;
           box-sizing: border-box;
           position: relative;
           overflow: hidden;
+          display: flex;
+          padding-top: 7rem;
+          justify-content: center;
+          background: ${COLORS.background};
+          color: ${COLORS.background_text};
         }
         .text {
           padding: 0px;
@@ -29,19 +32,12 @@ class Background extends HTMLElement {
           overflow: hidden;
           position: absolute;
           z-index: 0;
+          inset: 0;
         }
-        .content{
-          z-index: 1;
-          position: relative;
-        }
-      ::slotted(*) {
-        position: relative;
-        z-index: 1;
-      }
       </style>
       <div class="card">
         <div class="text"></div>
-        <slot class="content" name="content">hello</slot>
+        <slot class="content" name="content"></slot>
       </div>
     `;
     const p = this.shadowRoot.querySelector(".text");
@@ -50,9 +46,7 @@ class Background extends HTMLElement {
 }
 function fillViewport(container) {
   const phrase = BACKGROUND_PHRASE;
-  //
-  let text = phrase
-  //
+  let text = phrase;
   while (container.scrollHeight <= window.innerHeight * 1.15) {
     text += phrase;
     container.textContent = text;

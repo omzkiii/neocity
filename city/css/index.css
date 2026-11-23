@@ -12,3 +12,8 @@ body {
   width: 100vw;
 }
 
+[slot="content"], [slot="content"] > * {
+  position: relative;
+  z-index: auto;
+}
+
