@@ -22,6 +22,8 @@ class Background extends HTMLElement {
           color: ${COLORS.background_text};
         }
         .text {
+          width: 109vw;
+          font-family: "Courier Prime", sans-serif;
           padding: 0px;
           margin: 0px;
           font-size: 13px;
