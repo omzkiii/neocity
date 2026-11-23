@@ -21,7 +21,7 @@
   --gv_magenta: #b16286;
   --gv_green2: #689d6a;
 
-  background-color: var(--gv_base00);
+  background-color: #111111;
   color: var(--gv_base07);
   font-family: "Arimo", sans-serif;
 }
@@ -33,10 +33,10 @@ body {
   /* height: 100vh; */
   /* width: 100vw; */
 }
-#home {
+#block {
   text-align: center;
   font-weight: 400;
-  font-style: italic;
+  /* font-style: italic; */
   background-color: var(--gv_base06);
   color: var(--gv_base00);
   padding: 7vb;
@@ -44,5 +44,6 @@ body {
 }
 
 a {
-  color: var(--gv_base06);
+  color: var(--gv_base00);
+  text-decoration: none;
 }
