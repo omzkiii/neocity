@@ -1,12 +1,9 @@
 import { COLORS } from "../constants/colors.js";
 import { BACKGROUND_PHRASE } from "../constants/texts.js";
-class Background extends HTMLElement {
-  constructor() {
-    super();
-    // Attach a Shadow DOM to encapsulate styles and markup
-    this.attachShadow({ mode: "open" });
-    // Define the component's HTML and scoped CSS
-    this.shadowRoot.innerHTML = `
+import { builder } from "./builder.js";
+
+const html = document.createElement("div");
+html.innerHTML = `
       <style>
         .card {
           font-family: sans-serif;
@@ -39,13 +36,11 @@ class Background extends HTMLElement {
       </style>
       <div class="card">
         <div class="text"></div>
-        <slot class="content" name="content"></slot>
+        <slot class="content"></slot>
       </div>
-    `;
-    const p = this.shadowRoot.querySelector(".text");
-    p.textContent = fillViewport(p);
-  }
-}
+`;
+
+
 function fillViewport(container) {
   const phrase = BACKGROUND_PHRASE;
   let text = phrase;
@@ -56,5 +51,9 @@ function fillViewport(container) {
   return text;
 }
 
-// Register the new element with the browser
-customElements.define("c-background", Background);
+function callback(root) {
+  const p = root.querySelector(".text");
+  p = fillViewport(p);
+}
+
+builder("c-background", html, callback);

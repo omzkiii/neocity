@@ -17,7 +17,7 @@ class SubCard extends HTMLElement {
         }
       </style>
       <div class="card">
-        <slot name="content"></slot>
+        <slot class="content"></slot>
       </div>
     `;
   }

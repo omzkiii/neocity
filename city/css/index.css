@@ -12,8 +12,7 @@ body {
   width: 100vw;
 }
 
-[slot="content"], [slot="content"] > * {
+c-background > * {
   position: relative;
-  z-index: auto;
+  z-index: 2;
 }
-
