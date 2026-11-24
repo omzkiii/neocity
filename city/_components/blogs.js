@@ -80,13 +80,22 @@ html.innerHTML = `
 `;
 
 builder("c-blogs", html, async (root) => {
-  const blogs = await listBlogs().catch(() => []);
+  const blogs = await listBlogs().catch((err) => {
+    console.error(err);
+    return [];
+  });
   const list = root.querySelector("#file-list");
   const blogBody = root.querySelector("#blog-body");
   const selectedPath = window.location.hash.split("/").at(-1);
   let selected = blogs[0];
   if (selectedPath !== "blogs") {
     selected = blogs.find((b) => b.name === selectedPath);
+  }
+
+  if (!selected) {
+    list.innerHTML = "<p>no blogs available</p>";
+    blogBody.innerHTML = "<p>blog not found</p>";
+    return;
   }
 
   const stripExtension = (name) => {

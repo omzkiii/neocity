@@ -1,16 +1,13 @@
 export async function listBlogs(folderUrl = new URL("/_blogs/", location.href)) {
   const base = new URL(folderUrl, location.href);
-  const res = await fetch(folderUrl);
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  if (!base.pathname.endsWith("/")) base.pathname += "/";
 
-  const html = await res.text();
-  const doc = new DOMParser().parseFromString(html, "text/html");
+  const manifestUrl = new URL("index.json", base);
+  const res = await fetch(manifestUrl);
+  if (!res.ok) throw new Error(`HTTP ${res.status} for ${manifestUrl}`);
 
-  const names = Array.from(doc.querySelectorAll("a"))
-    .map((a) => a.getAttribute("href") || "")
-    .map((href) => href.split("?")[0].split("#")[0])
-    .filter((name) => /\.html?$/i.test(name) && !name.endsWith("/"))
-    .map((name) => decodeURIComponent(name.split("/").pop()));
+  const names = await res.json();
+  if (!Array.isArray(names)) throw new Error(`Invalid manifest: ${manifestUrl}`);
 
   return Promise.all(
     names.map(async (name) => {
