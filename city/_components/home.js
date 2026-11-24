@@ -25,9 +25,12 @@ html.innerHTML = `
       font-family: "Courier Prime", sans-serif;
       color: ${COLORS.primary_text};
     }
-    #main-card{
+    #main-card {
       padding: 5rem;
       padding-top: 1rem;
+    }
+    #nav {
+      padding: 1rem;
     }
   </style>
   <slot class="content">
@@ -62,7 +65,9 @@ html.innerHTML = `
             </p>
           </div>
           <c-subcard>
-            <c-nav></c-nav>
+            <div id="nav">
+              <c-nav></c-nav>
+            </div>
           </c-subcard>
         </div>
       </div>

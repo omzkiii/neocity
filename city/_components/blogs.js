@@ -21,9 +21,10 @@ html.innerHTML = `
       z-index: 2;
     }
     #header {
+      display: flex;
       font-size: 3rem;
       font-family: "Special Gothic Expanded One", sans-serif;
-      text-align: right;
+      justify-content: space-between;
       padding: 1rem;
       color: ${COLORS.primary_text};
     }
@@ -55,18 +56,17 @@ html.innerHTML = `
       min-height: 80vh;
       color: ${COLORS.primary_text};
     }
-
-    a {
-      font-family: "Courier Prime", sans-serif;
-      text-decoration: none;
-      color: ${COLORS.primary_text}
+    #header a {
+      font-size: 1.5rem;
     }
+
   </style>
   <slot class="content">
     <div id="panel">
       <c-subcard>
         <div id="header">
-          blogs
+          <a href="/#/"><<<</a>
+          <p>blogs</p>
         </div>
         <div id="file-list"></div>
       </c-subcard>
@@ -106,8 +106,9 @@ builder("c-blogs", html, async (root) => {
     .map(
       (b) =>
         `<p data-name="${b.name}"
-            style="font-weight:
-              ${selected.name === b.name ? "bold" : "normal"};">
+            style="
+              padding: 0.5rem;
+              font-weight: ${selected.name === b.name ? "bold" : "normal"};">
             <a href="#/blogs/${b.name}">> ${stripExtension(b.name)}</a>
         </p>`,
     )

@@ -1,7 +1,20 @@
+import { COLORS } from "../_constants/colors.js";
+
 const BASE_STYLES = `
   ::slotted(*) {
     position: relative;
     z-index: auto;
+  }
+
+  p {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  a {
+    font-family: "Courier Prime", sans-serif;
+    text-decoration: none;
+    color: ${COLORS.primary_text}
   }
 `;
 
