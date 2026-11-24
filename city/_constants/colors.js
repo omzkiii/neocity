@@ -4,4 +4,6 @@ export const COLORS = {
   component_background: "#FFFFFF",
   primary_text: "#2B2A2D",
   text_red: "#E05D5D",
+  yellow_highlight: "#F3F98D",
+  blue_highlight: "#8DE2F9",
 };
