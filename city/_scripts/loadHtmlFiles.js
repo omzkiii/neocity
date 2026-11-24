@@ -1,4 +1,4 @@
-export async function listBlogs(folderUrl = new URL("./_blogs/", location.href)) {
+export async function listBlogs(folderUrl = new URL("/_blogs/", location.href)) {
   const base = new URL(folderUrl, location.href);
   const res = await fetch(folderUrl);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
