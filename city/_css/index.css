@@ -13,6 +13,8 @@ body {
 }
 
 c-background > * {
+  overflow: scroll;
+  scrollbar-width: none;
   position: relative;
   z-index: 2;
 }

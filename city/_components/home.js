@@ -38,7 +38,7 @@ html.innerHTML = `
       flex-direction: column;
       justify-content: flex-end;
       text-align: end;
-      margin-top: 7rem;
+      margin-top: 5rem;
       gap: 3rem;
     }
     #now-playing {

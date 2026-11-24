@@ -11,9 +11,9 @@ html.innerHTML = `
           height: 100vh;
           box-sizing: border-box;
           position: relative;
-          overflow: hidden;
+          /* overflow: hidden; */
           display: flex;
-          padding-top: 7rem;
+          padding-top: 5rem;
           justify-content: center;
           background: ${COLORS.background};
           color: ${COLORS.background_text};
@@ -40,7 +40,6 @@ html.innerHTML = `
       </div>
 `;
 
-
 function fillViewport(container) {
   const phrase = BACKGROUND_PHRASE;
   let text = phrase;
@@ -53,7 +52,7 @@ function fillViewport(container) {
 
 function callback(root) {
   const p = root.querySelector(".text");
-  p = fillViewport(p);
+  fillViewport(p);
 }
 
 builder("c-background", html, callback);
