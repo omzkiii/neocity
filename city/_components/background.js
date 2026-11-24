@@ -1,5 +1,5 @@
-import { COLORS } from "../constants/colors.js";
-import { BACKGROUND_PHRASE } from "../constants/texts.js";
+import { COLORS } from "../_constants/colors.js";
+import { BACKGROUND_PHRASE } from "../_constants/texts.js";
 import { builder } from "./builder.js";
 
 const html = document.createElement("div");

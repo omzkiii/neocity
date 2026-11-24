@@ -1,4 +1,4 @@
-import { COLORS } from "../constants/colors.js";
+import { COLORS } from "../_constants/colors.js";
 class SubCard extends HTMLElement {
   constructor() {
     super();

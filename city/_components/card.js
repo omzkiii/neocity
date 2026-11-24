@@ -1,4 +1,4 @@
-import { COLORS } from "../constants/colors.js";
+import { COLORS } from "../_constants/colors.js";
 import { builder } from "./builder.js";
 
 const html = document.createElement("div");

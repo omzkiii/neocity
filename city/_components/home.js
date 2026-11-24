@@ -1,6 +1,7 @@
 import "./card.js";
 import "./subcard.js";
-import { COLORS } from "../constants/colors.js";
+import "./nav.js";
+import { COLORS } from "../_constants/colors.js";
 import { builder } from "./builder.js";
 
 const html = document.createElement("div");
@@ -57,12 +58,12 @@ html.innerHTML = `
             </p>
           </div>
           <c-subcard>
-            <div>
-            </div>
+            <c-nav></c-nav>
           </c-subcard>
         </div>
       </div>
     </c-card>
   </slot>
 `;
+
 builder("c-home", html);
