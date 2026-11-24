@@ -11,8 +11,6 @@ class SubCard extends HTMLElement {
           background: ${COLORS.component_background};
           border: 2px solid ${COLORS.primary_text};
           border-radius: 0px;
-          padding: 5rem;
-          padding-top: 1rem;
           font-family: "Courier Prime", sans-serif;
         }
       </style>

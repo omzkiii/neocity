@@ -5,7 +5,7 @@ const main = document.querySelector("#main");
 
 const routes = {
   "/": () => `<c-home></c-home>`,
-  "/blogs": () => `<c-blogs></c-blogs>`
+  "/blogs": () => `<c-blogs></c-blogs>`,
 };
 
 function getRoute() {
@@ -16,12 +16,10 @@ function getRoute() {
 
 function render() {
   const path = getRoute();
-  router(routes[path]);
-}
-function router(route) {
-  const path = getRoute();
-  if (route) {
-    main.innerHTML = route(path);
+  if (routes[path]) {
+    main.innerHTML = routes[path]();
+  } else if (path.startsWith("/blogs/")) {
+    main.innerHTML = routes["/blogs"];
   } else {
     main.innerHTML = `<c-card style="color: #000000;"><h1>404</h1><p>${path} not available</p><a href="#/">Go Home</a></c-card>`;
   }

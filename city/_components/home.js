@@ -25,10 +25,14 @@ html.innerHTML = `
       font-family: "Courier Prime", sans-serif;
       color: ${COLORS.primary_text};
     }
+    #main-card{
+      padding: 5rem;
+      padding-top: 1rem;
+    }
   </style>
   <slot class="content">
     <c-card>
-      <div>
+      <div id="main-card">
         <div id="header">
           <p>geo's</p>
           <p>area*</p>
