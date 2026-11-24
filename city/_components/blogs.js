@@ -18,7 +18,7 @@ html.innerHTML = `
       left: -5vw;
       top: 10vh;
       min-width: 20vw;
-      z-index: 2;
+      z-index: 4;
     }
     #header {
       display: flex;

@@ -26,6 +26,9 @@ html.innerHTML = `
       color: ${COLORS.primary_text};
     }
     #main-card {
+      max-height: 80vh;
+      overflow: scroll;
+      scrollbar-width: none;
       padding: 5rem;
       padding-top: 1rem;
     }
